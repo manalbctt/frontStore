@@ -42,8 +42,8 @@
               "src/assets/css/reset.css",
               "src/assets/css/camera.css",
               "src/assets/css/style.css",
-              "src/assets/css/responsive.css"
-
+              "src/assets/css/responsive.css",
+              "src/assets/css/sidebar.css"
             ],
             "scripts": [
               "src/assets/js/jquery_min.js",
@@ -58,17 +58,12 @@
               "src/assets/js/camera.min.js",
               "src/assets/js/jquery.easing.1.3.js",
               "src/assets/js/custom.js"
-
-      
-              
-
             
-
-
-
-             
-    
             ]
+
+
+
+
           },
           "configurations": {
             "production": {

@@ -8,13 +8,21 @@ import { OthersModule } from './others/others.module';
 import { SignInComponent } from './authentification/sign-in/sign-in.component';
 import { SignUpComponent } from './authentification/sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent,
+    ContactUsComponent,
+    CheckoutComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

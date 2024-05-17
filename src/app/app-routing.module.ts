@@ -9,6 +9,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
   { path: 'sign-in', component: SignInComponent }, 

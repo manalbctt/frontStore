@@ -7,6 +7,7 @@ import { SignUpComponent } from './authentification/sign-up/sign-up.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'payment', component: PaymentComponent },
+  { path: 'products', component: ProductsComponent }
+
 
 ];
 

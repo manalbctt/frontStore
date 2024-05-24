@@ -12,6 +12,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { ProductsComponent } from './products/products.component';
+import { ChildComponent } from './products/child/child.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PaymentComponent } from './payment/payment.component';
     NotFoundComponent,
     ContactUsComponent,
     CheckoutComponent,
-    PaymentComponent
+    PaymentComponent,
+    ProductsComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

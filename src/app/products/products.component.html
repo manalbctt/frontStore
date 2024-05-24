@@ -1,0 +1,93 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<div class="cc_pc_accordion_main_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 sidebar2_main_wrapper">
+                
+                <div class="sidebar_widget2">
+                    <div class="filter-area">
+                        <div class="showpro">
+                            <p><span>Showing 1-9</span> of 256 Results</p>
+                        </div>
+                        <select>
+                            <option>price up to down</option>
+                            <option>price down to up</option>
+                            <option>Ram</option>
+                            <option>cpu</option>
+                        </select>
+                        <div class="list-grid">
+                            <ul class="list-inline nav nav-pills">
+                                <li class="active"><a data-toggle="pill" href="#grid"><i class="fa fa-th-large"></i></a></li>
+                                <li><a data-toggle="pill" href="#list"><i class="fa fa-list"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tab-content">
+                            <div id="grid" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                        <div class="ss_featured_products_box">
+                                            <app-child price="200$" title="shi haja yarebi" image="assets/images/content/fpro_2.jpg"></app-child>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                        <div class="ss_featured_products_box">
+                                            <app-child price="200$" title="shi haja yarebi" image="assets/images/content/fpro_2.jpg"></app-child>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tab-content">
+                            <div id="grid" class="tab-pane fade in active">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                        <div class="ss_featured_products_box">
+                                            <app-child price="200$" title="shi haja yarebi" image="assets/images/content/fpro_2.jpg"></app-child>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                        <div class="ss_featured_products_box">
+                                            <app-child price="200$" title="shi haja yarebi" image="assets/images/content/fpro_2.jpg"></app-child>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- blog_pagination_section start -->
+                    <div class="pager_wrapper gc_blog_pagination">
+                        <ul class="pagination">
+                            <li><a href="#">Previous</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li class="third_pagger"><a href="#">3</a></li>
+                            <li class="hidden-xs"><a href="#">4</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
+                    </div>
+                    <!-- blog_pagination_section end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ss_footer_wrapper">
+    <app-footer-up></app-footer-up>
+    <app-footer-middle></app-footer-middle>
+    <app-footer-down></app-footer-down>
+</div>

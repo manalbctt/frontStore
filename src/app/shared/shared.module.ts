@@ -24,7 +24,7 @@ import { AppRoutingModule } from '../app-routing.module';
          NewsletterComponent,
          FooterUpComponent,
          FooterMiddleComponent,
-         FooterDownComponent
+         FooterDownComponent,
   ],
   imports: [
     CommonModule,    

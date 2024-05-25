@@ -1,0 +1,23 @@
+.badge {
+    font-size: 0.875rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.bg-validated {
+    background-color: #28a745; // Green
+    color: #fff;
+}
+
+.bg-pending {
+    background-color: #007bff; // Blue
+    color: #fff;
+}
+
+.bg-cancelled {
+    background-color: #dc3545; // Red
+    color: #fff;
+}
+.col-md-12 {
+    margin-bottom: 70px;
+}

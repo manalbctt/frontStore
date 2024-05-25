@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ligne-panier',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./ligne-panier.component.scss']
 })
 export class LignePanierComponent {
-
+  @Input() title :string="";
+  @Input() image :string="";
+  @Input() description :string="";
+  @Input() price :string="";
 }

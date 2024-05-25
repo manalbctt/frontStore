@@ -1,25 +1,45 @@
-<tr>
-    <td>
-        4
-    </td>
-    <td>
-        <div class="table_cart_img">
-            <figure>
-                <img src="images/content/cart_1.png" alt="" />
-            </figure>
-        </div>
-        <div class="table_cart_cntnt">
-            <h1>Brand new phone</h1>
-            <p>color : black </p>
-        </div>
-    </td>
-    <td></td>
-    <td class="cart_page_price">$199.00</td>
-    <td>
-        <input value="1" type="number" />
-    </td>
-    <td class="cart_page_totl">$299.00</td>
-    <td>
-        <a href="#"> <i class="fa fa-trash"></i></a>
-    </td>
-</tr>
+<div class="ibox-content">
+    <div class="table-responsive">
+        <table class="table shoping-cart-table">
+            <tbody>
+            <tr>
+                <td width="90">
+                    <div class="cart-product-imitation">
+                        <img src={{image}} alt="">
+                    </div>
+                </td>
+                <td class="desc">
+                    <h3>
+                    <a href="#" class="text-navy">
+                       {{title}}
+                    </a>
+                    </h3>
+                    
+                    <dl class="small m-b-none">
+                        <dt>{{description}}</dt>
+                    </dl>
+
+                    <div class="m-t-sm">
+                        <a href="#" class="text-muted"><i class="fa fa-gift"></i> Add gift package</a>
+                        |
+                        <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                    </div>
+                </td>
+
+               
+                <td width="65">
+                    <input type="number" class="form-control" min="1" placeholder="1">
+                </td>
+                <td>
+                    <h4>
+                       {{price}}
+                    </h4>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+

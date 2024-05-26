@@ -14,6 +14,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
 import { ChildComponent } from './products/child/child.component';
+import { LignePanierComponent } from './checkout/ligne-panier/ligne-panier.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ChildComponent } from './products/child/child.component';
     CheckoutComponent,
     PaymentComponent,
     ProductsComponent,
-    ChildComponent
+    ChildComponent,
+    LignePanierComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

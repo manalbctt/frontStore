@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-top-rated',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-rated.component.scss']
 })
 export class TopRatedComponent {
+  @Input() image :string="";
+  @Input() price :string="";
+  @Input() title :string="";
 
 }

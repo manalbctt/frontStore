@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 export class SingleLatestComponent {
   @Input() title :string="";
   @Input() image :string="";
-  @Input() Categories :string="";
+  @Input() categories :string="";
   @Input() price :string="";
 }

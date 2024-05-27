@@ -10,4 +10,6 @@ export class ChildComponent {
   @Input() image :string="";
   @Input() Categories :string="";
   @Input() price :string="";
+  @Input() delprice :string="";
+
 }

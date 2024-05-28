@@ -21,9 +21,6 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent }
-
-
-
 ];
 
 @NgModule({

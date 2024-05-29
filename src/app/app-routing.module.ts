@@ -12,6 +12,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
   { path: 'sign-in', component: SignInComponent }, 

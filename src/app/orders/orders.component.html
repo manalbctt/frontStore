@@ -22,34 +22,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>#001</td>
-                                    <td><span class="badge bg-validated">Validated</span></td>
-                                    <td>2024-05-20</td>
-                                    <td>$150.00</td>
-                                </tr>  <tr>
-                                    <td>#001</td>
-                                    <td><span class="badge bg-validated">Validated</span></td>
-                                    <td>2024-05-20</td>
-                                    <td>$150.00</td>
-                                </tr> <tr>
-                                    <td>#001</td>
-                                    <td><span class="badge bg-validated">Validated</span></td>
-                                    <td>2024-05-20</td>
-                                    <td>$150.00</td>
-                                </tr>
-                                <tr>
-                                    <td>#002</td>
-                                    <td><span class="badge bg-pending">Pending</span></td>
-                                    <td>2024-05-18</td>
-                                    <td>$100.00</td>
-                                </tr>
-                                <tr>
-                                    <td>#003</td>
-                                    <td><span class="badge bg-cancelled">Cancelled</span></td>
-                                    <td>2024-05-15</td>
-                                    <td>$75.50</td>
-                                </tr>
+                                <tr *ngFor="let command of commands">
+                                    <td>{{ command.id }}</td>
+                                    <td><span [ngClass]="{'badge bg-validated': command.status === 'Validated', 'badge bg-pending': command.status === 'Pending'}">{{ command.etat }}</span></td>
+                                    <td>{{ command.dateCommande | date:'dd/MM/yyyy HH:mm' }}</td>
+                                    <td>{{ command.total | currency }}</td>
+                                  </tr>
                             </tbody>
                         </table>
                     </div>

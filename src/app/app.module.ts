@@ -16,6 +16,7 @@ import { ProductsComponent } from './products/products.component';
 import { ChildComponent } from './products/child/child.component';
 import { LignePanierComponent } from './checkout/ligne-panier/ligne-panier.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { OrdersComponent } from './orders/orders.component';
     ProductsComponent,
     ChildComponent,
     LignePanierComponent,
-    OrdersComponent
+    OrdersComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

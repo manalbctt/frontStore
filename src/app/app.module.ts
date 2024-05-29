@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -16,9 +15,10 @@ import { ProductsComponent } from './products/products.component';
 import { ChildComponent } from './products/child/child.component';
 import { LignePanierComponent } from './checkout/ligne-panier/ligne-panier.component';
 import { OrdersComponent } from './orders/orders.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
 import { OrdersService } from './orders/orders.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ProductDetailsComponent } from './others/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule, 
     SharedModule,
     OthersModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [OrdersService],
   

@@ -16,6 +16,8 @@ import { ProductsComponent } from './products/products.component';
 import { ChildComponent } from './products/child/child.component';
 import { LignePanierComponent } from './checkout/ligne-panier/ligne-panier.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OrdersService } from './orders/orders.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,9 +38,10 @@ import { OrdersComponent } from './orders/orders.component';
     BrowserModule,
     AppRoutingModule, 
     SharedModule,
-    OthersModule
+    OthersModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [OrdersService],
   
   bootstrap: [AppComponent]
 })

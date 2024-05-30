@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
@@ -13,12 +12,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
-import { ChildComponent } from './products/child/child.component';
 import { LignePanierComponent } from './checkout/ligne-panier/ligne-panier.component';
 import { OrdersComponent } from './orders/orders.component';
-import {FormsModule} from "@angular/forms";
-import { HttpClientModule } from '@angular/common/http';  // Import HttpClientModule
-
+import { OrdersService } from './orders/orders.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ProductDetailsComponent } from './others/product-details/product-details.component';
+import { ChildComponent } from './products/child/child.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +33,19 @@ import { HttpClientModule } from '@angular/common/http';  // Import HttpClientMo
     ProductsComponent,
     ChildComponent,
     LignePanierComponent,
-    OrdersComponent
+    OrdersComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     OthersModule,
-    FormsModule,
-    HttpClientModule  
+    HttpClientModule,
+    RouterModule
   ],
-  providers: [],
-
+  providers: [OrdersService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

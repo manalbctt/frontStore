@@ -16,8 +16,8 @@
                         <select>
                             <option>price up to down</option>
                             <option>price down to up</option>
-                            <option>Ram</option>
-                            <option>cpu</option>
+                            <option>newest</option>
+                            <option>oldest</option>
                         </select>
                         <div class="list-grid">
                             <ul class="list-inline nav nav-pills">
@@ -33,15 +33,22 @@
                         <div class="tab-content">
                             <div id="grid" class="tab-pane fade in active">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first">
+                                    
                                         <div class="ss_featured_products_box">
-                                            <app-child price="120$" delprice="180$" title="Nike revolution 5" image="assets/images/photoproducts/product-2.jpg"></app-child>
+                                            <app-child class="product-image-container" price="120$" delprice="180$" title="Nike revolution 5" image="assets/images/photoproducts/product-2.jpg"></app-child>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first">
                                         <div class="ss_featured_products_box">
-                                            <app-child price="345$" delprice="423$" title="Casque XM5" image="assets/images/photoproducts/product-1.jpg"></app-child>
-                                        </div>
+                                            <app-child 
+                                            title="Nom du produit" 
+                                            image="assets/images/photoproducts/product-1.jpg" 
+                                            Categories="Catégorie du produit"
+                                            price="100$"
+                                            delprice="120$"
+                                          ></app-child>
+                                                                                  </div>
                                     </div>
                                 </div>
                             </div>
@@ -54,12 +61,18 @@
                         <div class="tab-content">
                             <div id="grid" class="tab-pane fade in active">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> 
                                         <div class="ss_featured_products_box">
-                                            <app-child price="175$" delprice="200$" title="Galaxy Watch" image="assets/images/photoproducts/product-3.jpg"></app-child>
-                                        </div>
+                                            <app-child 
+                                            title="Nom du produit" 
+                                            image="assets/images/photoproducts/product-1.jpg" 
+                                            Categories="Catégorie du produit"
+                                            price="100$"
+                                            delprice="120$"
+                                          ></app-child>
+                                                                                  </div>
                                     </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> <!-- Adjusted col size for two products side by side -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 prs_upcom_slide_first"> 
                                         <div class="ss_featured_products_box">
                                             <app-child price="200$" delprice="269$" title="Skincare pack" image="assets/images/photoproducts/product-4.jpg"></app-child>
                                         </div>
@@ -89,6 +102,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div class="ss_footer_wrapper">
     <app-footer-up></app-footer-up>

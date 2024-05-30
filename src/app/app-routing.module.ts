@@ -9,8 +9,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
+<<<<<<< HEAD
 import {AppComponent} from "./app.component";
 
+=======
+import { ProductDetailsComponent } from './others/product-details/product-details.component';
+>>>>>>> 9ca061f2c0e1a610adceab8f2416b7cac25b2a4d
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +25,11 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent },
+<<<<<<< HEAD
   {path : ':id',component : AppComponent}
+=======
+  { path: 'product-details', component: ProductDetailsComponent }
+>>>>>>> 9ca061f2c0e1a610adceab8f2416b7cac25b2a4d
 ];
 
 @NgModule({

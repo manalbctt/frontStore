@@ -1,68 +1,61 @@
 <app-header></app-header>
 
-
 <div class="container">
-<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-md-9">
-            <div class="ibox">
-                <div class="ibox-title">
-                    <span class="pull-right">(<strong>5</strong>) items</span>
-                    <h5>Items in your cart</h5>
-                </div>
-                <app-ligne-panier price="255$" image="" title="Product title" description="product description"></app-ligne-panier>
-                <app-ligne-panier price="255$" image="" title="Product title" description="product description"></app-ligne-panier>
-
-                <div class="ibox-content">
-                    <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
-
-                </div>
-            </div>
-
+      <div class="col-md-9">
+        <div class="ibox">
+          <div class="ibox-title">
+            <span class="pull-right">(<strong>{{ paniers.length }}</strong>) items</span>
+            <h5>Items in your cart</h5>
+          </div>
+          <div class="ibox-content">
+            <ng-container *ngFor="let panier of paniers">
+              <ng-container *ngIf="panier.LPs && panier.LPs.length > 0">
+                <app-ligne-panier
+                  *ngFor="let lignePanier of panier.LPs"
+                  [lignePanier]="lignePanier"
+                ></app-ligne-panier>
+              </ng-container>
+            </ng-container>
+          </div>
         </div>
-        <div class="col-md-3">
-            <div class="ibox">
-                <div class="ibox-title">
-                    <h5>Cart Summary</h5>
-                </div>
-                <div class="ibox-content">
-                    <span>
-                        Total
-                    </span>
-                    <h2 class="font-bold">
-                        $510,00
-                    </h2>
-
-                    <hr>
-                    
-                    <div class="m-t-sm">
-                        <div class="btn-group">
-                        <a href="#" class="btn btn-primary btn-sm" routerLink="/payment"><i class="fa fa-shopping-cart"></i> Checkout</a>
-                        <a href="#" class="btn btn-white btn-sm"> Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ibox">
-                <div class="ibox-title">
-                    <h5>Support</h5>
-                </div>
-                <div class="ibox-content text-center">
-                    <h3><i class="fa fa-phone"></i> 0652012365</h3>
-                    <span class="small">
-                        Please contact with us if you have any questions. We are avalible 24h.
-                    </span>
-                </div>
-            </div>
-
-            
+        <div class="ibox-content">
+          <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
         </div>
+      </div>
+      <div class="col-md-3">
+        <div class="ibox">
+          <div class="ibox-title">
+            <h5>Cart Summary</h5>
+          </div>
+          <div class="ibox-content">
+            <span>Total</span>
+            <h2 class="font-bold">$510.00</h2>
+            <hr />
+            <div class="m-t-sm">
+              <div class="btn-group">
+                <a href="#" class="btn btn-primary btn-sm" routerLink="/payment"><i class="fa fa-shopping-cart"></i> Checkout</a>
+                <a href="#" class="btn btn-white btn-sm">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ibox">
+          <div class="ibox-title">
+            <h5>Support</h5>
+          </div>
+          <div class="ibox-content text-center">
+            <h3><i class="fa fa-phone"></i> 0652012365</h3>
+            <span class="small">Please contact with us if you have any questions. We are available 24h.</span>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 <div class="ss_footer_wrapper">
-    <app-footer-up></app-footer-up>
-    <app-footer-middle></app-footer-middle>
-    <app-footer-down></app-footer-down>
+  <app-footer-up></app-footer-up>
+  <app-footer-middle></app-footer-middle>
+  <app-footer-down></app-footer-down>
 </div>

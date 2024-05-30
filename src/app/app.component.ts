@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
+import {AuthService} from "./auth.service";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit{
   id: any ;
   storeDetails: any;
 
-  constructor(private route: ActivatedRoute, private router :Router) {
+  constructor(private route: ActivatedRoute, private router :Router,private authService : AuthService) {
   }
 
 
@@ -23,6 +24,16 @@ export class AppComponent implements OnInit{
       this.id = params.get('id');
       let identif=Number(this.id);
       if (this.id) {
+        this.authService.getStoreUrl(this.id).subscribe(
+          Response=> {
+            console.log(Response);
+            localStorage.setItem('connectionString',Response);
+            console.log(localStorage.getItem('connectionString'));
+          },
+          Error=> {
+            console.log(Error);
+          }
+        );
         localStorage.setItem('idStore',this.id);
         console.log(this.id);
         this.loadStoreDetails();

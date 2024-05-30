@@ -19,6 +19,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './others/product-details/product-details.component';
 import { ChildComponent } from './products/child/child.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -36,16 +37,17 @@ import { ChildComponent } from './products/child/child.component';
     OrdersComponent,
     ProductDetailsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule, 
-    SharedModule,
-    OthersModule,
-    HttpClientModule,
-    RouterModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        SharedModule,
+        OthersModule,
+        HttpClientModule,
+        RouterModule,
+        FormsModule
+    ],
   providers: [OrdersService],
-  
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

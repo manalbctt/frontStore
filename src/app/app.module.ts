@@ -12,13 +12,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
-import { ChildComponent } from './products/child/child.component';
 import { LignePanierComponent } from './checkout/ligne-panier/ligne-panier.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersService } from './orders/orders.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './others/product-details/product-details.component';
+import { ChildComponent } from './products/child/child.component';
 
 @NgModule({
   declarations: [

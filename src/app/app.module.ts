@@ -20,6 +20,9 @@ import { RouterModule } from '@angular/router';
 import { ProductDetailsComponent } from './others/product-details/product-details.component';
 import { ChildComponent } from './products/child/child.component';
 import {FormsModule} from "@angular/forms";
+import { SuccessComponent } from './success/success.component';
+import { CancelComponent } from './cancel/cancel.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import {FormsModule} from "@angular/forms";
     ChildComponent,
     LignePanierComponent,
     OrdersComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SuccessComponent,
+    CancelComponent
   ],
     imports: [
         BrowserModule,

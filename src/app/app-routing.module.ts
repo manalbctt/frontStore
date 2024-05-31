@@ -10,6 +10,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
 import {AppComponent} from "./app.component";
+import { SuccessComponent } from './success/success.component';
+import { CancelComponent } from './cancel/cancel.component';
 import { ProductDetailsComponent } from './others/product-details/product-details.component';
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent },
   {path : ':id',component : AppComponent},
-  { path: 'product-details', component: ProductDetailsComponent }
+  { path: 'product-details', component: ProductDetailsComponent },
+  { path: 'success', component: SuccessComponent},
+  { path: 'cancel', component: CancelComponent}
 ];
 
 @NgModule({

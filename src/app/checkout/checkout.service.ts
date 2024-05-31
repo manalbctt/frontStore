@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Panier } from '../models/checkout.model';
 
@@ -19,19 +19,63 @@ export class PanierService {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  getPanierByClientId(clientId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/client/${clientId}`);
+  getPanierByClientId(clientId: number,connectionString : string): Observable<any> {
+    const body = { ConnectionString: connectionString };
+   // let apiUrl2 = `${this.baseUrl}/client/${clientId}`;
+      let apiUrl2=`${this.apiUrl}/client/${clientId}`;
+    return this.http.post<any>(apiUrl2, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+   // return this.http.post<any>(`${this.apiUrl}/client/${clientId}`);
   }
-  getLignesPanierByPanierId(panierId: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl2}/lignespanier/panier/${panierId}`);
+  getLignesPanierByPanierId(panierId: number,connectionString : string): Observable<any> {
+    const body = { ConnectionString: connectionString };
+
+    let apiUrl2=`${this.apiUrl2}/lignespanier/panier/${panierId}`;
+
+    return this.http.post<any>(apiUrl2, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
   }
-  getPhotosByVarianteId(varianteId: number): Observable<any>{
-    return this.http.get<any>(`${this.apiUrl3}/${varianteId}`);
+  getPhotosByVarianteId(varianteId:number ,connectionString : string): Observable<any>{
+    const body = { ConnectionString: connectionString };
+
+    let apiUrl2=`${this.apiUrl3}/${varianteId}`;
+
+    return this.http.post<any>(apiUrl2, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+    //return this.http.post<any>(`${this.apiUrl3}/${varianteId}`);
   }
-  getVarianteById(Id: number): Observable<any>{
-    return this.http.get<any>(`${this.apiUrl4}/${Id}`);
+  getVarianteById(Id: number,connectionString : string): Observable<any>{
+    const body = { ConnectionString: connectionString };
+
+    let apiUrl2=`${this.apiUrl4}/${Id}`;
+
+    return this.http.post<any>(apiUrl2, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+
+   // return this.http.post<any>(`${this.apiUrl4}/${Id}`);
   }
-  getProductById(ProductId: number): Observable<any>{
-    return this.http.get<any>(`${this.apiUrl5}/Product/variante/${ProductId}`);
+  getProductById(ProductId: number,connectionString : string): Observable<any>{
+    const body = { ConnectionString: connectionString };
+
+    let apiUrl2=`${this.apiUrl5}/Product/variante/${ProductId}`;
+
+    return this.http.post<any>(apiUrl2, body, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+   // return this.http.post<any>(`${this.apiUrl5}/Product/variante/${ProductId}`);
   }
 }

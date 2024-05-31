@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./middle-header.component.scss']
 })
 export class MiddleHeaderComponent {
-
+  clientId: number = 1;
 }

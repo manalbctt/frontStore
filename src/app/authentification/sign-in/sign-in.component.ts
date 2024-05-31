@@ -23,7 +23,19 @@ export class SignInComponent {
     this.authService.login(loginDto).subscribe(
       Response => {
         console.log(Response);
-        localStorage.setItem('id',Response);
+        localStorage.setItem('token',Response);
+        //
+        this.authService.getClientId(Response).subscribe(
+          Response => {
+            console.log(Response);
+            localStorage.setItem('idClient',Response.toString());
+            //
+
+          },
+          Error => {
+            console.log(Error);
+          }
+        );
       },
       Error => {
         console.log(Error);

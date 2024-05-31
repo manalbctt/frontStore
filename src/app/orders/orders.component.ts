@@ -8,18 +8,23 @@ import { OrdersService } from './orders.service';
 })
 export class OrdersComponent implements OnInit{
   commands: any[] = [];
-  clientId: number = 4; // Remplacez par l'ID du client souhaité
+  ConnectionString : any;
+  clientId !:number;
+
 
   constructor(private ordersService: OrdersService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
+  this.clientId = Number(localStorage.getItem('idClient')); // Remplacez par l'ID du client souhaité
+  this.ConnectionString =localStorage.getItem('connectionString');
     this.loadCommandsByClient(this.clientId);
   }
 
   loadCommandsByClient(clientId: number): void {
-    this.ordersService.getCommandsByClient(clientId).subscribe(
+    this.ordersService.getCommandsByClient(clientId,this.ConnectionString).subscribe(
       (data: any[]) => {
         this.commands = data;
+        console.log(data);
       },
       (error: any) => {
         console.error('There was an error while fetching the commands for the client!', error);

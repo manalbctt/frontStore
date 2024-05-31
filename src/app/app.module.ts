@@ -17,9 +17,10 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrdersService } from './orders/orders.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { ProductDetailsComponent } from './productdetails/product-details/product-details.component';
 import { ChildComponent } from './products/child/child.component';
 import {FormsModule} from "@angular/forms";
+
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +35,9 @@ import {FormsModule} from "@angular/forms";
     ChildComponent,
     LignePanierComponent,
     OrdersComponent,
-    ProductDetailsComponent,ProductsComponent
-    
-  ],
+    ProductsComponent,
+    TestComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -45,7 +46,7 @@ import {FormsModule} from "@angular/forms";
         HttpClientModule,
         RouterModule,
         FormsModule
-    ],
+          ],
   providers: [OrdersService],
 
   bootstrap: [AppComponent]

@@ -10,9 +10,9 @@ import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
 import {AppComponent} from "./app.component";
+import { ProductDetailsComponent } from './others/product-details/product-details.component';
 import { SuccessComponent } from './success/success.component';
 import { CancelComponent } from './cancel/cancel.component';
-import { ProductDetailsComponent } from './others/product-details/product-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

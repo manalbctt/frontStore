@@ -29,6 +29,9 @@ export class AppComponent implements OnInit{
             console.log(Response);
             localStorage.setItem('connectionString',Response);
             console.log(localStorage.getItem('connectionString'));
+            this.router.navigate(['/sign-in']);
+
+
           },
           Error=> {
             console.log(Error);

@@ -26,22 +26,80 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Votre code existant
+    const ConnectionString: any = localStorage.getItem('connectionString');
+    this.route.params.subscribe((params) => {
+      this.clientId = +params['clientId'];
+
+      this.panierService.getPanierByClientId(this.clientId, ConnectionString).subscribe(
+        (data) => {
+          this.panier = data;
+          console.log("this.panier", this.panier);
+
+          this.panierService.getLignesPanierByPanierId(this.panier.id, ConnectionString).subscribe(
+            (lignes) => {
+              this.lignesPanier = lignes;
+              console.log("this.lignesPanier", this.lignesPanier);
+
+              this.lignesPanier.forEach((ligne) => {
+                this.panierService.getPhotosByVarianteId(ligne.varianteId, ConnectionString).subscribe(
+                  (photos) => {
+                    ligne.image = photos.length > 0 ? photos[0].urlImage : '';
+                  },
+                  (error) => {
+                    console.error(error);
+                  }
+                );
+
+                this.panierService.getVarianteById(ligne.varianteId, ConnectionString).subscribe(
+                  (variante) => {
+                    ligne.price = variante.prix; // Assurez-vous que 'price' est une propriété de Variante
+                  },
+                  (error) => {
+                    console.error(error);
+                  }
+                );
+
+                this.panierService.getProductById(ligne.varianteId, ConnectionString).subscribe(
+                  (product) => {
+                    ligne.title = product.name;
+                    ligne.description = product.description;
+                  },
+                  (error) => {
+                    console.error(error);
+                  }
+                );
+              });
+            },
+            (error) => {
+              console.error(error);
+            }
+          );
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    });
   }
 
   async redirectToStripe() {
-    if (this.lignesPanier.length === 0) {
-      console.error('Le panier est vide.');
-      return;
-    }
-  
-    const items = this.lignesPanier.map(ligne => ({
+    let items = this.lignesPanier.map(ligne => ({
       name: ligne.title,
       price: ligne.price,
       quantity: ligne.quantite,
     }));
+
+    // Si le panier est vide, ajoutez un article par défaut
+    if (items.length === 0) {
+      items = [{
+        name: 'Default Item',
+        price: 1000, // 10.00 USD
+        quantity: 1,
+      }];
+    }
+
     const currency = 'usd'; // ou toute autre devise que vous utilisez
-  
+
     this.stripeService.createCheckoutSession(items, currency).subscribe(async response => {
       const stripe = await this.stripePromise;
       if (stripe) {
@@ -52,7 +110,6 @@ export class CheckoutComponent implements OnInit {
       }
     });
   }
-  
 
   getTotalItems(): number {
     return this.lignesPanier.reduce((total, ligne) => total + Number(ligne.quantite), 0);
@@ -61,8 +118,11 @@ export class CheckoutComponent implements OnInit {
   getTotal(): number {
     return this.lignesPanier.reduce((total, ligne) => total + (ligne.price * ligne.quantite), 0);
   }
+
   continueShopping() {
-    // Redirection vers HomeComponent
-    this.router.navigate(['/']); // Redirige vers la page d'accueil (HomeComponent)
+    // Redirection vers HomeComponent avec actualisation
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 }

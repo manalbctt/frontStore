@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout/:clientId', component: CheckoutComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent },

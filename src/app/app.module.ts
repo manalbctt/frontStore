@@ -17,7 +17,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrdersService } from './orders/orders.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { ProductDetailsComponent } from './others/product-details/product-details.component';
+import { ProductDetailsComponent } from './productdetails/product-details/product-details.component';
 import { ChildComponent } from './products/child/child.component';
 
 @NgModule({

@@ -44,9 +44,9 @@
             </div>
           </div>
         </div>
-        <div class="ibox-content">
-          <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
-        </div>
+        <button class="btn btn-white" (click)="continueShopping()">
+          <i class="fa fa-arrow-left"></i> Continue shopping
+        </button>
       </div>
       <div class="col-md-3">
         <div class="ibox">
@@ -58,8 +58,8 @@
             <h2 class="font-bold">{{ getTotal() | currency }}</h2>
             <hr />
             <div class="m-t-sm">
-              <div class="btn-group">
-                <a href="#" class="btn btn-primary btn-sm" routerLink="/payment"><i class="fa fa-shopping-cart"></i> Checkout</a>
+              <div class="ibox-content">
+                <button (click)="redirectToStripe()" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Proceed To Checkout</button>
                 <a href="#" class="btn btn-white btn-sm">Cancel</a>
               </div>
             </div>
@@ -83,4 +83,3 @@
   <app-footer-middle></app-footer-middle>
   <app-footer-down></app-footer-down>
 </div>
---------

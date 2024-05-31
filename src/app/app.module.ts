@@ -19,6 +19,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ChildComponent } from './products/child/child.component';
 import {FormsModule} from "@angular/forms";
+import { SuccessComponent } from './success/success.component';
+import { CancelComponent } from './cancel/cancel.component';
+import { environment } from 'src/environments/environment';
 
 import { TestComponent } from './test/test.component';
 
@@ -35,6 +38,10 @@ import { TestComponent } from './test/test.component';
     ChildComponent,
     LignePanierComponent,
     OrdersComponent,
+    ProductDetailsComponent,
+    SuccessComponent,
+    CancelComponent
+  
     ProductsComponent,
     TestComponent
     ],

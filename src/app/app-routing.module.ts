@@ -10,19 +10,19 @@ import { PaymentComponent } from './payment/payment.component';
 import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
 import {AppComponent} from "./app.component";
-import { ProductDetailsComponent } from './others/product-details/product-details.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'detailsproduct/:id', component: TestComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'checkout/:clientId', component: CheckoutComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent },
-  {path : ':id',component : AppComponent},
-  { path: 'product-details', component: ProductDetailsComponent }
+  { path : ':id',component : AppComponent}
 ];
 
 @NgModule({

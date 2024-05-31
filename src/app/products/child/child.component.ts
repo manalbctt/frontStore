@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/product.service';
 
 @Component({
@@ -6,30 +7,22 @@ import { ProductService } from 'src/app/product.service';
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss']
 })
-export class ChildComponent implements OnInit {
-  products: any[] = [];
-
-  constructor(private productService: ProductService) { } 
-
-  ngOnInit(): void {
-    this.getAllProducts();
+export class ChildComponent {
+  /**
+   *
+   */
+  constructor(private router: Router) {
+    
   }
+  @Input() title: string="";
+  @Input() image: string="";
+  @Input() price: string="";
+  @Input() id: number=0;
 
-  getAllProducts(): void {
-    this.productService.getAllProducts().subscribe(
-      (data: any[]) => {
-        this.products = data;
-      },
-      (error: any) => {
-        console.error('Error fetching products:', error);
-      }
-    );
+   toHome(){
+    this.router.navigate(['/detailsproduct', this.id]).then(() => {
+      // Force a full page reload after navigation
+      window.location.href = "/detailsproduct/${this.id}";
+    });
   }
-
-  @Input() title: string = "";
-  @Input() image: string = "";
-  @Input() Categories: string = "";
-  @Input() price: string = "";
-  @Input() delprice: string = "";
-
 }

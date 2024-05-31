@@ -13,20 +13,23 @@ import {AppComponent} from "./app.component";
 import { ProductDetailsComponent } from './others/product-details/product-details.component';
 import { SuccessComponent } from './success/success.component';
 import { CancelComponent } from './cancel/cancel.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'detailsproduct/:id', component: TestComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'checkout/:clientId', component: CheckoutComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent },
-  {path : ':id',component : AppComponent},
+ {path : ':id',component : AppComponent},
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'success', component: SuccessComponent},
   { path: 'cancel', component: CancelComponent}
+  { path : ':id',component : AppComponent}
 ];
 
 @NgModule({

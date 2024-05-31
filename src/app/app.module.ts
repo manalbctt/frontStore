@@ -17,12 +17,13 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrdersService } from './orders/orders.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { ProductDetailsComponent } from './others/product-details/product-details.component';
 import { ChildComponent } from './products/child/child.component';
 import {FormsModule} from "@angular/forms";
 import { SuccessComponent } from './success/success.component';
 import { CancelComponent } from './cancel/cancel.component';
 import { environment } from 'src/environments/environment';
+
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +35,16 @@ import { environment } from 'src/environments/environment';
     ContactUsComponent,
     CheckoutComponent,
     PaymentComponent,
-    ProductsComponent,
     ChildComponent,
     LignePanierComponent,
     OrdersComponent,
     ProductDetailsComponent,
     SuccessComponent,
     CancelComponent
-  ],
+  
+    ProductsComponent,
+    TestComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -50,7 +53,7 @@ import { environment } from 'src/environments/environment';
         HttpClientModule,
         RouterModule,
         FormsModule
-    ],
+          ],
   providers: [OrdersService],
 
   bootstrap: [AppComponent]

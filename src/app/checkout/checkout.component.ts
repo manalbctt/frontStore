@@ -18,21 +18,22 @@ export class CheckoutComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    let ConnectionString : any =localStorage.getItem('connectionString');
     this.route.params.subscribe((params) => {
       this.clientId = +params['clientId'];
 
-      this.panierService.getPanierByClientId(this.clientId).subscribe(
+      this.panierService.getPanierByClientId(this.clientId,ConnectionString).subscribe(
         (data) => {
           this.panier = data;
-          console.log(this.panier);
+          console.log("this.panier"+this.panier);
 
-          this.panierService.getLignesPanierByPanierId(this.panier.id).subscribe(
+          this.panierService.getLignesPanierByPanierId(this.panier.id,ConnectionString).subscribe(
             (lignes) => {
               this.lignesPanier = lignes;
-              console.log(this.lignesPanier);
+              console.log("this.lignPanier"+this.lignesPanier);
 
               this.lignesPanier.forEach((ligne) => {
-                this.panierService.getPhotosByVarianteId(ligne.varianteId).subscribe(
+                this.panierService.getPhotosByVarianteId(ligne.varianteId,ConnectionString).subscribe(
                   (photos) => {
                     ligne.image = photos.length > 0 ? photos[0].urlImage : '';
                   },
@@ -41,7 +42,7 @@ export class CheckoutComponent implements OnInit {
                   }
                 );
 
-                this.panierService.getVarianteById(ligne.varianteId).subscribe(
+                this.panierService.getVarianteById(ligne.varianteId,ConnectionString).subscribe(
                   (variante) => {
                     ligne.price = variante.prix; // Assurez-vous que 'price' est une propriété de Variante
                   },
@@ -49,7 +50,7 @@ export class CheckoutComponent implements OnInit {
                     console.error(error);
                   }
                 )
-                this.panierService.getProductById(ligne.varianteId).subscribe(
+                this.panierService.getProductById(ligne.varianteId,ConnectionString).subscribe(
                   (product)=>{
                     ligne.title = product.name;
                     ligne.description=product.description;

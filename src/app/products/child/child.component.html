@@ -1,31 +1,28 @@
-<!-- child.component.html -->
-
-<div class="item" *ngFor="let product of products">
-    <div class="ss_featured_products_box">
-      <div class="ss_featured_products_box_img">
-        <span class="ss_tag">new</span>
-        <span class="ss_offer">20% off</span>
-        <img [src]="product.image" alt="Product" class="img-responsive">
-        <ul>
-          <li>
-            <ul>
-              <li><i class="fa fa-circle corol_1" aria-hidden="true"></i></li>
-              <li><i class="fa fa-circle corol_2" aria-hidden="true"></i></li>
-              <li><i class="fa fa-circle corol_3" aria-hidden="true"></i></li>
-              <li><i class="fa fa-circle corol_4" aria-hidden="true"></i></li>
-            </ul>
-          </li>
-          <li>
-            <a href="" routerLink="/checkout">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="ss_feat_prod_cont_heading_wrapper">
-        <h4><a [routerLink]="['/product-details', product.id]">{{ product.title }}</a></h4>
-        <ins>{{ product.price }}</ins> <del>{{ product.delprice }}</del>  
-      </div>
+<div class="item">
+  <div class="ss_featured_products_box">
+    <div class="ss_featured_products_box_img">
+      <span class="ss_tag">new</span>
+      <span class="ss_offer">20% off</span>
+      <img [src]="image" alt="Product" class="img-responsive">
+      <ul>
+        <li>
+          <ul>
+            <li><i class="fa fa-circle corol_1" aria-hidden="true"></i></li>
+            <li><i class="fa fa-circle corol_2" aria-hidden="true"></i></li>
+            <li><i class="fa fa-circle corol_3" aria-hidden="true"></i></li>
+            <li><i class="fa fa-circle corol_4" aria-hidden="true"></i></li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/checkout">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="ss_feat_prod_cont_heading_wrapper">
+      <h4><a [routerLink]="['/product-details', id]">{{ title }}</a></h4>
+      <ins>{{ price }}</ins>
     </div>
   </div>
-  
+</div>

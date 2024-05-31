@@ -31,11 +31,11 @@ import {FormsModule} from "@angular/forms";
     ContactUsComponent,
     CheckoutComponent,
     PaymentComponent,
-    ProductsComponent,
     ChildComponent,
     LignePanierComponent,
     OrdersComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,ProductsComponent
+    
   ],
     imports: [
         BrowserModule,

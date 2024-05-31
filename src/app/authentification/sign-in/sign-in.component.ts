@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthService} from "../../auth.service";
 import {loginDto} from "../../Dtos/loginDto";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +10,7 @@ import {loginDto} from "../../Dtos/loginDto";
 })
 export class SignInComponent {
 
-  constructor(private authService : AuthService) {
+  constructor(private authService : AuthService , private router : Router) {
   }
   email : string ='';
   password : string ='';
@@ -29,6 +30,10 @@ export class SignInComponent {
           Response => {
             console.log(Response);
             localStorage.setItem('idClient',Response.toString());
+            this.router.navigate(['/']).then(() => {
+              window.location.reload();
+            });
+
             //
 
           },
